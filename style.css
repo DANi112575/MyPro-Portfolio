@@ -1,227 +1,40 @@
-/* Reset */
-* {
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-    scroll-behavior: smooth;
+    text-align: center;
 }
 
-/* Body */
-body {
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Navbar */
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.85);
-    color: #fff;
-    padding: 15px 50px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    transition: all 0.3s ease-in-out;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #ffcc00;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
+    list-style: none;
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease-in-out;
-}
-
-nav ul li a:hover {
-    color: #ffcc00;
-}
-
-/* Theme Toggle Button */
-#theme-toggle {
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
-}
-
-#theme-toggle:hover {
-    color: #ffcc00;
-}
-
-/* Home Section */
-#home {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/home-bg.jpg') center/cover;
     color: white;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: background-size 0.5s ease-in-out;
-}
-
-#home:hover {
-    background-size: 110%;
-}
-
-.home-content {
-    transform: translateY(100%);
-    animation: slideIn 1s forwards;
-}
-
-.home-content h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.home-content p {
-    font-size: 20px;
-    margin-top: 10px;
-}
-
-.btn {
-    display: inline-block;
-    background: #ffcc00;
-    color: #222;
-    padding: 10px 20px;
-    margin-top: 20px;
+    padding: 10px;
     text-decoration: none;
-    font-size: 18px;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
 }
 
-.btn:hover {
-    background: #e6b800;
-    transform: scale(1.05);
-}
-
-/* Animations */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* Sections */
 section {
-    padding: 80px 50px;
-    text-align: center;
+    padding: 50px;
 }
 
-/* Profile Picture */
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-top: 20px;
-}
-
-/* Skills */
-.skills-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.skill {
-    background: #222;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.skill i {
-    font-size: 24px;
-    color: #ffcc00;
-}
-
-.skill:hover {
-    transform: scale(1.1);
-}
-
-/* Contact Details */
-.contact-details p {
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-.contact-details a {
-    color: #ffcc00;
-    text-decoration: none;
-}
-
-.contact-details a:hover {
-    text-decoration: underline;
-}
-
-/* Download Button */
-.download-btn {
-    display: inline-block;
-    background: #ffcc00;
-    color: #222;
-    padding: 10px 20px;
-    margin-top: 30px;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-}
-
-.download-btn:hover {
-    background: #e6b800;
-    transform: scale(1.05);
-}
-
-/* Footer */
 footer {
-    text-align: center;
+    background: black;
     padding: 20px;
-    background: #222;
-    color: #fff;
 }
