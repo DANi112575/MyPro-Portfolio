@@ -1,33 +1,26 @@
-const express = require("express");
-const nodemailer = require("nodemailer");
-const cors = require("cors");
-require("dotenv").config();
+document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
 
-const app = express();
-app.use(express.json());
-app.use(cors());
-
-const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    }
-});
-
-app.post("/send", (req, res) => {
-    const { name, email, message } = req.body;
-    const mailOptions = {
-        from: email,
-        to: process.env.EMAIL_USER,
-        subject: `New Contact Form Submission from ${name}`,
-        text: message
-    };
-
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) return res.status(500).json({ message: "Error sending email" });
-        res.json({ message: "Message sent successfully!" });
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        fetch("http://localhost:5000/send", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value
+            })
+        }).then(res => res.json()).then(data => alert(data.message));
     });
 });
-
-app.listen(5000, () => console.log("Server running on port 5000"));

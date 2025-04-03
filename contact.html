@@ -9,7 +9,7 @@
 <body>
     <header>
         <nav>
-            <!-- <div class="logo">Daniel Atem</div> -->
+            <div class="logo">Daniel Atem</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -29,19 +29,6 @@
         </form>
     </section>
 
-    <script>
-        document.getElementById("contact-form").addEventListener("submit", function(e) {
-            e.preventDefault();
-            fetch("http://localhost:5000/send", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    name: document.getElementById("name").value,
-                    email: document.getElementById("email").value,
-                    message: document.getElementById("message").value
-                })
-            }).then(res => res.json()).then(data => alert(data.message));
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
